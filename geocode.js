@@ -5,10 +5,10 @@ const geocode = (address, callback) =>{
     address = address.replace(/ /g, '%20');
     //console.log(address);
 
-    let urlData = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '.json?access_token=pk.eyJ1Ijoib21rYXJwaGFuc29wa2FyIiwiYSI6ImNrZDh3YmtibTBleWgyeXBtdzhpbG4xcXAifQ.G_q_Ssv7mfSEa7QZUkOI0A';
-    // console.log(urlData);
+    let url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '.json?access_token=pk.eyJ1Ijoib21rYXJwaGFuc29wa2FyIiwiYSI6ImNrZDh3YmtibTBleWgyeXBtdzhpbG4xcXAifQ.G_q_Ssv7mfSEa7QZUkOI0A';
+    // console.log(url);
     
-    request({url: urlData, proxy: '', json: true}, (error, response)=>{
+    request({url, proxy: '', json: true}, (error, response)=>{
         if(error)
             callback("Unable to connect to url !");
         else if(response.body.features.length == 0)

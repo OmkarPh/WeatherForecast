@@ -1,6 +1,6 @@
 const geocode = require('./geocode');
 const forecast = require('./forecast');
-
+const fs = require('fs');
 let address = '';
 for(let i=2; i<process.argv.length; i++)
     address += process.argv[i] + " "; 
@@ -15,12 +15,15 @@ else
             return console.log('Error',error);
 
         console.log("Data about", data.location);
-        console.log(forecast(data.latitude, data.longitude, (error, weather)=>{
+
+        console.log(forecast(data, (error, weather)=>{
             if(error)
                 return console.log('Error',error);
             
-            console.log(weather);
+            let jsonString = JSON.stringify(weather);
+            // Send this to client
             
+            fs.writeFileSync('data.json', jsonString);
         }));
     });
 
