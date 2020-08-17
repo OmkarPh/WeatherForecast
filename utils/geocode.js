@@ -1,5 +1,4 @@
 const request = require('request');
-
 const geocode = (address, callback) =>{
 
     address = address.replace(/ /g, '%20');
