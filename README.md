@@ -3,7 +3,9 @@
 ## This Prototype uses following third party APIs:
 
   - Weather Data -> https://openweathermap.org/api/one-call-api
+    Fetch weather data depending on your geo-coordinates
   - Geolocation -> https://www.mapbox.com
+    Fetch geo-coordinates based on your query address
     
 ### Basic workflow
   - Clientside JS queries Node server API with one or two word string as search query 
@@ -24,9 +26,5 @@
  - Present weather data in a more user-friendly and reactive way.
  - Incorporate graphs for forecast data.
 
-License
-----
 
-MIT
-
-**Intelligence is the ability to avoid doing work, yet getting the work done.**
+**Intelligence is the ability to avoid doing work, yet getting the work done.** -Somebody better than me.
