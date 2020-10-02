@@ -38,10 +38,12 @@ app.get('/responses/weatherData',(req, res)=>{
         res.send({"error":"Empty String"});
     else
         geocode(address, (error, data)=>{
+            console.log("Geocoded, data is ",data);
             if(error)
                 res.send({"error":error});
             else
                 forecast(data, (error, weather)=>{
+                    console.log("Weather data is ",weather);
                     if(error)
                         res.send({"error":error});
                     else
